@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+    <meta property="og:title" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+    <meta property="og:description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+    <meta property="og:image" content="https://w3crm.dexignzone.com/xhtml/social-image.png">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- PAGE TITLE HERE -->
+    <title>MEDOVA AYD</title>
+
+
+    <link href="/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/vendor/swiper/css/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.css">
+    <link href="/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/vendor/jvmap/jquery-jvectormap.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+    <!-- tagify-css -->
+    <link href="/vendor/tagify/dist/tagify.css" rel="stylesheet">
+
+    <!-- Style css -->
+    <link href="/css/style.css" rel="stylesheet">
+
+</head>
+
+<body data-typography="poppins" data-theme-version="light" data-layout="vertical">
+
+
+    <div id="main-wrapper">
+
+        <!--********** navbar horizontal*************-->
+        {{>navbarhor}}
+
+        <!--********** navbar vertical*************-->
+        {{> navbar}}
+
+        <body>
+
+<div style="margin-left: 15%; margin-top: 5%;">
+
+<form action="/unidad17eva" method="POST">
+
+  <div class="card">
+    <h5 class="card-header">Pregunta #01</h5>
+    <div class="card-body">
+
+      <h5 class="card-title">{{splitOptions pregunta.0.enunciado}}</h5>
+<div class="card-body">
+</div>
+    
+        {{#each (splitOptions pregunta.0.opcion)}}
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="valorRespuesta" id="exampleRadios4_{{@index}}" value={{this}}>
+          <label class="form-check-label" for="exampleRadios2_{{@index}}">
+           {{this}}
+          </label>
+        </div>
+        {{/each}}
+
+    </div>
+</div>
+
+  <div class="card">
+    <h5 class="card-header">Pregunta #02</h5>
+    <div class="card-body">
+
+      <h5 class="card-title">{{splitOptions pregunta.1.enunciado}}</h5>
+<div class="card-body">
+</div>
+     
+        {{#each (splitOptions pregunta.1.opcion)}}
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="valorRespuesta2" id="exampleRadios4_{{@index}}" value={{this}}>
+          <label class="form-check-label" for="exampleRadios2_{{@index}}">
+           {{this}}
+          </label>
+        </div>
+        {{/each}}
+
+    </div>
+</div>
+
+
+  <div class="card">
+    <h5 class="card-header">Pregunta #03</h5>
+    <div class="card-body">
+
+      <h5 class="card-title">{{splitOptions pregunta.2.enunciado}}</h5>
+<div class="card-body">
+</div>
+     
+        {{#each (splitOptions pregunta.2.opcion)}}
+        <div class="form-check">
+          <input class="form-check-input" type="radio"  name="valorRespuesta3" id="exampleRadios4_{{@index}}" value={{this}}>
+          <label class="form-check-label" for="exampleRadios2_{{@index}}">
+           {{this}}
+          </label>
+        </div>
+        {{/each}}
+
+    </div>
+</div>
+
+
+  <div class="card">
+    <h5 class="card-header">Pregunta #04</h5>
+    <div class="card-body">
+
+      <h5 class="card-title">{{splitOptions pregunta.3.enunciado}}</h5>
+<div class="card-body">
+</div>
+     
+        {{#each (splitOptions pregunta.3.opcion)}}
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="valorRespuesta4" id="exampleRadios4_{{@index}}" value={{this}}>
+          <label class="form-check-label" for="exampleRadios2_{{@index}}">
+           {{this}}
+          </label>
+        </div>
+        {{/each}}
+
+    </div>
+</div>
+
+
+  <div class="card">
+    <h5 class="card-header">Pregunta #05</h5>
+    <div class="card-body">
+
+      <h5 class="card-title">{{splitOptions pregunta.4.enunciado}}</h5>
+<div class="card-body">
+</div>
+     
+        {{#each (splitOptions pregunta.4.opcion)}}
+        <div class="form-check">
+          <input class="form-check-input" type="radio"  name="valorRespuesta5" id="exampleRadios4_{{@index}}" value={{this}}>
+          <label class="form-check-label" for="exampleRadios2_{{@index}}">
+           {{this}}
+          </label>
+        </div>
+        {{/each}}
+
+    </div>
+</div>
+
+<input type="text" name="idPreguntaAsociada" value="{{pregunta.0.idpregunta}}" hidden>
+<input type="text" name="idPreguntaAsociada2"  value="{{pregunta.1.idpregunta}}" hidden>
+<input type="text" name="idPreguntaAsociada3"  value="{{pregunta.2.idpregunta}}" hidden>
+<input type="text" name="idPreguntaAsociada4"  value="{{pregunta.3.idpregunta}}" hidden>
+<input type="text" name="idPreguntaAsociada5"  value="{{pregunta.4.idpregunta}}" hidden>
+A 
+<input type="text" name="idUsuarioResponsable"  value="10004" hidden>
+<button type="submit" class="btn btn-success">Enviar Respuestas</button>
+  
+</form>
+        
+            </div>
+
+
+        </body>
+
+        {{> footerhor}}
+
+
+        <!-- Required vendors -->
+        <script src="./vendor/global/global.min.js"></script>
+        <script src="./vendor/chart.js/Chart.bundle.min.js"></script>
+        <script src="./vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+        <script src="./vendor/apexchart/apexchart.js"></script>
+
+        <!-- Dashboard 1 -->
+        <script src="./js/dashboard/dashboard-1.js"></script>
+        <script src="./vendor/draggable/draggable.js"></script>
+
+
+        <!-- tagify -->
+        <script src="./vendor/tagify/dist/tagify.js"></script>
+
+        <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
+        <script src="./vendor/datatables/js/dataTables.buttons.min.js"></script>
+        <script src="./vendor/datatables/js/buttons.html5.min.js"></script>
+        <script src="./vendor/datatables/js/jszip.min.js"></script>
+        <script src="./js/plugins-init/datatables.init.js"></script>
+
+        <!-- Apex Chart -->
+
+        <script src="vendor/bootstrap-datetimepicker/js/moment.js"></script>
+        <script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+
+        <!-- Vectormap -->
+        <script src="./vendor/jqvmap/js/jquery.vmap.min.js"></script>
+        <script src="./vendor/jqvmap/js/jquery.vmap.world.js"></script>
+        <script src="./vendor/jqvmap/js/jquery.vmap.usa.js"></script>
+        <script src="./js/custom.js"></script>
+        <script src="./js/deznav-init.js"></script>
+        <script src="./js/demo.js"></script>
+        <script src="./js/styleSwitcher.js"></script>
+
+
+
+</body>
+
+</html>

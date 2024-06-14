@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:title" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:image" content="https://w3crm.dexignzone.com/xhtml/social-image.png">
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- PAGE TITLE HERE -->
+	<title>MEDOVA AYD</title>
+
+
+
+	<link href="/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+	<link href="/vendor/swiper/css/swiper-bundle.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.css">
+	<link href="/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="/vendor/jvmap/jquery-jvectormap.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css" rel="stylesheet">
+	<link href="vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+	<!-- tagify-css -->
+	<link href="/vendor/tagify/dist/tagify.css" rel="stylesheet">
+
+	<!-- Style css -->
+	<link href="/css/style.css" rel="stylesheet">
+
+</head>
+
+<body data-typography="poppins" data-theme-version="light" data-layout="vertical">
+
+
+
+    <div id="main-wrapper">
+
+      	<!--********** navbar horizontal*************-->
+		{{> navbarhor}}
+
+		<!--********** navbar vertical*************-->
+		{{> navbar}}
+
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12 col-xxl-12">
+                        <div class="card">
+                            <body class="nk-body bg-lighter npc-default has-sidebar "
+                                style="font-family: 'Ubuntu', sans-serif;">
+                                <div class="nk-app-root">
+                                    <div class="nk-main ">
+                                        <div class="nk-wrap ">
+                                            <div class="nk-content ">
+                                                <div class="container-fluid">
+                                                    <div class="nk-content-inner">
+                                                        <div class="nk-content-body">
+                                                            <div class="components-preview wide-md mx-auto">
+                                                                <div class="nk-block-head nk-block-head-lg wide-sm">
+                                                                    <div class="nk-block-head-content">
+                                                                        <div class="nk-block-head-sub"><a
+                                                                                class="back-to" href="/"><em
+                                                                                    class="icon ni ni-arrow-left"></em><span>Volver
+                                                                                    a Unidad
+                                                                                    1</span></a>
+                                                                        </div>
+                                                                        <h2 class="nk-block-title fw-normal">Unidad 1 -
+                                                                            Banco de Preguntas</h2>
+                                                                        <div class="nk-block-des">
+                                                                            <p class="lead">Para el banco de preguntas
+                                                                                de la unidad uno, puedes
+                                                                                agregar nuevas
+                                                                                preguntas para la evaluacion de la
+                                                                                unidad uno - Introducion a
+                                                                                Analisis de Sistema,
+                                                                                por favor, ingresa un enunciado, tipo de
+                                                                                pregunta y sus opciones de
+                                                                                respuesta, no
+                                                                                olvide revisar su enunciado antes de
+                                                                                enviar al sistema
+                                                                            </p>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- .nk-block-head -->
+
+
+                                                                <div class="card-inner">
+                                                                    <div class="preview-block">
+                                                                        <span
+                                                                            class="preview-title-lg overline-title">BANCO
+                                                                            DE PREGUNTAS</span>
+                                                                            <form action="/unidadUnoAgregar" method="POST">
+                                                                        <div class="row gy-4">
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="default-01">ID
+                                                                                        Evaluacion</label>
+                                                                                    <div class="form-control-wrap">
+                                                                                        <input type="text"
+                                                                                            class="form-control focus"
+                                                                                            id="101" value="101"
+                                                                                            placeholder="Input placeholder"
+                                                                                            readonly disabled>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group">
+
+                                                                                    <div class="form-group">
+                                                                                        <label class="form-label"
+                                                                                            for="default-01">Codigo de
+                                                                                            Docente</label>
+                                                                                        <div class="form-control-wrap">
+                                                                                            <input type="text"
+                                                                                                class="form-control focus"
+                                                                                                id="5" value="5"
+                                                                                                placeholder="Input placeholder"
+                                                                                                readonly disabled>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="default-03">Defina un nivel
+                                                                                        dificultad (1-3)</label>
+                                                                                    <div class="form-control-wrap">
+                                                                                        <div
+                                                                                            class="form-icon form-icon-left">
+                                                                                            <em
+                                                                                                class="icon ni ni-user"></em>
+                                                                                        </div>
+                                                                                        <input type="number"
+                                                                                            class="form-control"
+                                                                                            id="default-03"
+                                                                                            name="dificultad"
+                                                                                            placeholder="1-3">
+                                                                                    </div>
+
+                                                                                    <label class="form-label"
+                                                                                        for="default-06">Selecciona un
+                                                                                        tipo de Pregunta</label>
+                                                                                    <div class="form-control-wrap ">
+                                                                                        <div
+                                                                                            class="form-control-select">
+                                                                                            <select class="form-control" 
+                                                                                                id="default-06" name="tipoPregunta">
+                                                                                                <option
+                                                                                                    value="SELECTUNIC">
+                                                                                                    Seleccion unica
+                                                                                                </option>
+                                                                    
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+
+
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="default-textarea">Enunciado
+                                                                                        de la pregunta</label>
+                                                                                    <div class="form-control-wrap">
+
+                                                                                        <textarea
+                                                                                            class="form-control no-resize"
+                                                                                            id="default-textarea"
+                                                                                            cols="20"
+                                                                                            name="enunciado"
+                                                                                            rows="6">Maximo 1024 caracteres</textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="default-01">Opcion
+                                                                                        A</label>
+                                                                                    <div class="form-control-wrap">
+                                                                                        <div
+                                                                                            class="form-icon form-icon-left">
+                                                                                            <em
+                                                                                                class="icon ni ni-text-a"></em>
+                                                                                        </div>
+                                                                                        <input type="text"
+                                                                                            class="form-control"
+                                                                                            id="101" name="opciona"
+                                                                                            placeholder="ingresa una opcion"
+                                                                                            required>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group">
+
+                                                                                    <div class="form-group">
+                                                                                        <label class="form-label"
+                                                                                            for="default-01">Opcion
+                                                                                            B</label>
+                                                                                        <div class="form-control-wrap">
+                                                                                            <div
+                                                                                                class="form-icon form-icon-left">
+                                                                                                <em
+                                                                                                    class="icon ni ni-bold"></em>
+                                                                                            </div>
+                                                                                            <input type="text"
+                                                                                                class="form-control"
+                                                                                                id="5" name="opcionb"
+                                                                                                placeholder="ingresa una opcion"
+                                                                                                required>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            </br>
+
+
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="default-01">Opcion
+                                                                                        C</label>
+                                                                                    <div class="form-control-wrap">
+                                                                                        <div
+                                                                                            class="form-icon form-icon-left">
+                                                                                            <em
+                                                                                                class="icon ni ni-sign-euro"></em>
+                                                                                        </div>
+                                                                                        <input type="text"
+                                                                                            class="form-control"
+                                                                                            id="101" name="opcionc"
+                                                                                            placeholder="ingresa una opcion"
+                                                                                            required>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group">
+
+                                                                                    <div class="form-group">
+                                                                                        <label class="form-label"
+                                                                                            for="default-01">Opcion
+                                                                                            D</label>
+                                                                                        <div class="form-control-wrap">
+                                                                                            <div
+                                                                                                class="form-icon form-icon-left">
+                                                                                                <em
+                                                                                                    class="icon ni ni-sign-vnd"></em>
+                                                                                            </div>
+                                                                                            <input type="text"
+                                                                                                class="form-control"
+                                                                                                id="5" name="opciond"
+                                                                                                placeholder="ingresa una opcion"
+                                                                                                required>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group">
+
+                                                                                    <label class="form-label"
+                                                                                        for="default-06">Selecciona un
+                                                                                        la opcion correcta</label>
+                                                                                    <div class="form-control-wrap ">
+
+                                                                                        <div
+                                                                                            class="form-control-select">
+                                                                                            <div
+                                                                                                class="form-icon form-icon-left">
+                                                                                                <em
+                                                                                                    class="icon ni ni-thumbs-up"></em>
+                                                                                            </div>
+                                                                                            <select type="number"class="form-control"
+                                                                                                id="default-06" name="respuestaCorrecta">
+                                                                                                <option  value=1>Opcion
+                                                                                                    A
+                                                                                                </option>
+                                                                                                <option value=2>Opcion
+                                                                                                    B
+                                                                                                </option>
+                                                                                                <option value=3>Opcion
+                                                                                                    C
+                                                                                                </option>
+                                                                                                <option value=4>Opcion
+                                                                                                    D
+                                                                                                </option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="default-textarea">Retroalimentacion</label>
+
+                                                                                    <div class="form-control-wrap">
+                                                                                        <div
+                                                                                            class="form-icon form-icon-left">
+                                                                                            <em
+                                                                                                class="icon ni ni-star-fill"></em>
+                                                                                        </div>
+                                                                                        <textarea
+                                                                                            name="retroalimentacion"
+                                                                                            class="form-control no-resize"
+                                                                                            id="default-textarea">Digite el motivo de la respuesta</textarea>
+                                                                                    </div>
+                                                                                    
+                                                                                </div>
+                                                                                
+                                                                            </div>
+                                
+                                                                        </div>
+                                                                           
+
+                                                                    </div>
+                                                                      <div class="col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit>"
+                                                                                    <a href=""
+                                                                                        class="btn btn-danger text-end"><em
+                                                                                            class="icon ni ni-question"></em><span>Agregar
+                                                                                            pregunta</span> </a> </button>
+                                                                                </div>
+                                                                            </div>
+                                                                    </form>
+                                                                </div>
+
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- JavaScript -->
+
+                                        <script src="js/bundle.js"></script>
+                                        <script src="js/scripts.js"></script>
+                            </body>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <!--**********************************
+            Content body end
+        ***********************************-->
+    <div class="offcanvas offcanvas-end customeoff" tabindex="-1" id="offcanvasExample">
+        <div class="offcanvas-header">
+            <h5 class="modal-title" id="#gridSystemModal">Add Employee</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container-fluid">
+                <div>
+                    <label>Profile Picture</label>
+                    <div class="dz-default dlab-message upload-img mb-3">
+                    
+                            <svg width="41" height="40" viewBox="0 0 41 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M27.1666 26.6667L20.4999 20L13.8333 26.6667" stroke="#DADADA" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M20.5 20V35" stroke="#DADADA" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M34.4833 30.6501C36.1088 29.7638 37.393 28.3615 38.1331 26.6644C38.8731 24.9673 39.027 23.0721 38.5703 21.2779C38.1136 19.4836 37.0724 17.8926 35.6111 16.7558C34.1497 15.619 32.3514 15.0013 30.4999 15.0001H28.3999C27.8955 13.0488 26.9552 11.2373 25.6498 9.70171C24.3445 8.16614 22.708 6.94647 20.8634 6.1344C19.0189 5.32233 17.0142 4.93899 15.0001 5.01319C12.9861 5.0874 11.015 5.61722 9.23523 6.56283C7.45541 7.50844 5.91312 8.84523 4.7243 10.4727C3.53549 12.1002 2.73108 13.9759 2.37157 15.959C2.01205 17.9421 2.10678 19.9809 2.64862 21.9222C3.19047 23.8634 4.16534 25.6565 5.49994 27.1667"
+                                    stroke="#DADADA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M27.1666 26.6667L20.4999 20L13.8333 26.6667" stroke="#DADADA" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <div class="fallback">
+                                <input name="file" type="file" multiple>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--**********************************
+            Footer start
+        ***********************************-->
+   {{> footerhor}}
+
+
+    </div>
+
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="vendor/apexchart/apexchart.js"></script>
+
+    <!-- Dashboard 1 -->
+    <script src="js/dashboard/dashboard-1.js"></script>
+    <script src="vendor/draggable/draggable.js"></script>
+
+
+    <!-- tagify -->
+    <script src="vendor/tagify/dist/tagify.js"></script>
+
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/js/dataTables.buttons.min.js"></script>
+    <script src="vendor/datatables/js/buttons.html5.min.js"></script>
+    <script src="vendor/datatables/js/jszip.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+
+    <!-- Apex Chart -->
+
+    <script src="vendor/bootstrap-datetimepicker/js/moment.js"></script>
+    <script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+
+    <!-- Vectormap -->
+    <script src="vendor/jqvmap/js/jquery.vmap.min.js"></script>
+    <script src="vendor/jqvmap/js/jquery.vmap.world.js"></script>
+    <script src="vendor/jqvmap/js/jquery.vmap.usa.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/deznav-init.js"></script>
+    <script src="js/demo.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+
+
+</body>
+
+</html>

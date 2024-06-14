@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+    <meta property="og:title" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+    <meta property="og:description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+    <meta property="og:image" content="https://w3crm.dexignzone.com/xhtml/social-image.png">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- PAGE TITLE HERE -->
+    <title>W3CRM Customer Relationship Management</title>
+
+    <!-- FAVICONS ICON -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <link href="/css/style.css" rel="stylesheet">
+
+</head>
+
+{{>header}}
+
+<body class="vh-100">
+    <div class="authincation h-100">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-md-6">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form">
+                                    <div class="text-center mb-3">
+                                    </div>
+                                    <h1 class="text-center mb-4 ">MEDOVA AYD</h1>
+                                    
+                                    <hs4 class="text-center mb-4">A fin de recuperar el acceso al aplicativo, se solicita
+                                        al usuario que proporcione su dirección de correo electrónico registrada, con el
+                                        propósito de recibir una clave temporal renovada.</h4>
+                                    <form onsubmit="actualizarMailto(event)">
+                                        <div class="mb-3">
+                                            <label class="mb-1"><strong> Correo </strong></label>
+                                            <input type="email" class="form-control" id="correo" placeholder="Correo electrónico" required>
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <button type="submit" class="btn btn-danger btn-block" value="Enviar correo" > Enviar </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--**********************************
+	Scripts
+***********************************-->
+    <!-- Required vendors -->
+    <script src="./vendor/global/global.min.js"></script>
+    <script src="./js/custom.js"></script>
+    <script src="./js/deznav-init.js"></script>
+    <script>
+  function actualizarMailto(event) {
+    event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+    // Obtener el valor del campo de formulario
+    var correo = document.getElementById('correo').value;
+
+    // Crear el enlace `mailto` con el valor del campo de formulario
+    var enlaceMailto = 'mailto:marlonstivenprod@ufps.edu.co?subject=Recuperacion%20de%20Contrase%C3%B1a%20-%20MedovaApp&body=Hola%20soy%20el%20usuario%20con%20correo%3A%20' + correo + '%2C%20he%20olvidado%20las%20credenciales%2C%20espero%20que%20prontos%20puedas%20contactarme%20conmigo%20para%20retorno%20de%20credenciales%2C%20muchas%20gracias';
+
+    // Abrir el enlace `mailto` en una nueva ventana o pestaña
+    window.open(enlaceMailto, '_blank');
+  }
+</script>
+</body>
+
+</html>
