@@ -20,6 +20,45 @@
 </head>
 {{> header}}
 <body>
+    <h1>Peso Actual</h1>
+    <input type="text" id="pesoInput" readonly>
+    <button id="conectar">Conectar</button>
+    
+    <script>
+        const conectarBoton = document.getElementById('conectar');
+        const pesoInput = document.getElementById('pesoInput');
+        let port;
+        let reader;
+
+        conectarBoton.addEventListener('click', async () => {
+            try {
+                port = await navigator.serial.requestPort();
+                await port.open({ baudRate: 9600 });
+                conectarBoton.textContent = 'Conectado';
+                conectarBoton.disabled = true;
+
+                while (port.readable) {
+                    reader = port.readable.getReader();
+                    try {
+                        while (true) {
+                            const { value, done } = await reader.read();
+                            if (done) break;
+                            const peso = new TextDecoder().decode(value).trim();
+                            if (peso) {
+                                pesoInput.value = peso + ' g';
+                            }
+                        }
+                    } catch (error) {
+                        console.error(error);
+                    } finally {
+                        reader.releaseLock();
+                    }
+                }
+            } catch (error) {
+                console.error('Error al abrir el puerto:', error);
+            }
+        });
+    </script>
     <div class="login-box">
         <img src='https://i.ibb.co/6wpfqns/48dfe62d-2432-42d1-8c93-7922b42f75ae.jpg' class="avatar" alt="Avatar Image">
         <h1>Bienvenido al inicio de Sesion</h1>
