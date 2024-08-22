@@ -12,7 +12,7 @@
     <meta property="og:description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
     <meta name="format-detection" content="telephone=no">
     <!-- PAGE TITLE HERE -->
-    <title>Frigorifico la frontera</title>
+    <title>Biblioteca Virtual BIBUJA</title>
     <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style1.css">
@@ -23,7 +23,7 @@
     <div class="login-box">
         <img src='https://i.ibb.co/6wpfqns/48dfe62d-2432-42d1-8c93-7922b42f75ae.jpg' class="avatar" alt="Avatar Image">
         <h1>Bienvenido al inicio de Sesion</h1>
-        <h3>SISTEMA DE GESTIÓN DE DECOMISOS</h3>
+        <h3>Biblioteca Virtual BIBUJA</h3>
         <form action="/login" method="POST">  
             <!-- USERNAME INPUT -->
             <label for="email">Cedula</label>
@@ -39,41 +39,5 @@
     <h1>Peso Actual</h1>
     <input type="text" id="pesoInput" readonly>
     <button id="conectar">Conectar</button>
-    
-    <script>
-        const conectarBoton = document.getElementById('conectar');
-        const pesoInput = document.getElementById('pesoInput');
-        let port;
-        let reader;
-
-        conectarBoton.addEventListener('click', async () => {
-            try {
-                port = await navigator.serial.requestPort();
-                await port.open({ baudRate: 9600 });
-                conectarBoton.textContent = 'Conectado';
-                conectarBoton.disabled = true;
-
-                while (port.readable) {
-                    reader = port.readable.getReader();
-                    try {
-                        while (true) {
-                            const { value, done } = await reader.read();
-                            if (done) break;
-                            const peso = new TextDecoder().decode(value).trim();
-                            if (peso) {
-                                pesoInput.value = peso + ' g';
-                            }
-                        }
-                    } catch (error) {
-                        console.error(error);
-                    } finally {
-                        reader.releaseLock();
-                    }
-                }
-            } catch (error) {
-                console.error('Error al abrir el puerto:', error);
-            }
-        });
-    </script>
 </body>
 </html>
