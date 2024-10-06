@@ -4,17 +4,17 @@ const pool = require('../db');
 const bcrypt = require('bcryptjs');
 const schemasPersona = require('../schemas/schemasDelete');
 
-router.get('/tablainfopersonal', (req, res) => {
-  res.render('tablainfopersonal');
+router.get('/tablainformacionpersonal', (req, res) => {
+  res.render('tablainformacionpersonal');
 });
 
-router.post('/tablainfopersonal', async (req, res) => {
+router.post('/tablainformacionpersonal', async (req, res) => {
   try {
     console.log(req.body);
     const { error } = schemasPersona.validate(req.body);
     if (error) {
       req.flash('error', error.details[0].message);
-      res.redirect('/tablainfopersonal');
+      res.redirect('/tablainformacionpersonal');
     }
     
     // Verificar si la cédula ya existe en la base de datos
@@ -23,16 +23,12 @@ router.post('/tablainfopersonal', async (req, res) => {
       console.log("BIEN")
       await pool.query('DELETE FROM persona WHERE cedula = ?', [req.body.cedula]);
       req.flash('success', 'Usuario eliminado correctamente');
-      res.redirect('/tablainfopersonal');
-
-      req.flash('error', 'La cédula ingresada ya está registrada');
-      res.redirect('/tablainfopersonal');
-      return;
+      res.redirect('/tablainformacionpersonal');
     }
     
     else {
       req.flash('error', 'La cédula ingresada no esta en el sistema');
-      res.redirect('/tablainfopersonal');
+      res.redirect('/tablainformacionpersonal');
       return;
     }
   } catch (error) {
