@@ -61,7 +61,7 @@ app.use(require('./routes/routes'));
 app.use(require('./routes/recuperarcontra'));
 app.use(require('./routes/contranueva'));
 app.use(require('./routes/login'));
-app.use(require('./routes/infopersonal'));
+app.use(require('./routes/registerUser.js'));
 app.use(require('./routes/unidad12'));
 app.use(require('./routes/unidad13'));
 app.use(require('./routes/unidad14'));
