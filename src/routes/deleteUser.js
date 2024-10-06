@@ -4,11 +4,11 @@ const pool = require('../db');
 const bcrypt = require('bcryptjs');
 const schemasPersona = require('../schemas/schemasDelete');
 
-router.get('/tablainformacionpersonal', (req, res) => {
-  res.render('tablainformacionpersonal');
+router.get('/eliminarusuario', (req, res) => {
+  res.render('eliminarusuario');
 });
 
-router.post('/tablainformacionpersonal', async (req, res) => {
+router.post('/eliminarusuario', async (req, res) => {
   try {
     console.log(req.body);
     const { error } = schemasPersona.validate(req.body);
@@ -23,12 +23,12 @@ router.post('/tablainformacionpersonal', async (req, res) => {
       console.log("BIEN")
       await pool.query('DELETE FROM persona WHERE cedula = ?', [req.body.cedula]);
       req.flash('success', 'Usuario eliminado correctamente');
-      res.redirect('/tablainformacionpersonal');
+      res.redirect('/eliminarusuario');
     }
     
     else {
       req.flash('error', 'La cédula ingresada no esta en el sistema');
-      res.redirect('/tablainformacionpersonal');
+      res.redirect('/eliminarusuario');
       return;
     }
   } catch (error) {
