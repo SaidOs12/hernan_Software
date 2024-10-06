@@ -19,7 +19,6 @@ router.post('/login', async (req,res) =>{
       
       
       req.flash('success', 'Bienvenido usuario: ' +  busqueda[0].cedula)
-      sessionStorage.setItem('userLogged', data[0]);
       if (busqueda[0].tipo_usuario === "admin") {
         res.redirect('/dashboard');
       } else if (busqueda[0].tipo_usuario === "bibliotecario") {
