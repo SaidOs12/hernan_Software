@@ -90,7 +90,6 @@ app.use(require('./routes/tablainformacion'));
 app.use(require('./routes/proceso'));
 app.use(require('./routes/register.js'));
 app.use(require('./routes/registerUser.js'));
-app.use(require('./routes/deleteUser.js'));
 app.use(require('./routes/evaluacion'));
 app.use(require('./routes/respuesta'));
 app.use(require('./routes/autentificacion'));

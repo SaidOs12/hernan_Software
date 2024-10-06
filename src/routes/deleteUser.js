@@ -11,7 +11,11 @@ router.get('/tablainfopersonal', (req, res) => {
 router.post('/tablainfopersonal', async (req, res) => {
   try {
     console.log(req.body);
-    
+    const { error } = schemasPersona.validate(req.body);
+    if (error) {
+      req.flash('error', error.details[0].message);
+      res.redirect('/tablainfopersonal');
+    }
     
     // Verificar si la cédula ya existe en la base de datos
     const existeCedula = await pool.query('SELECT * FROM persona WHERE cedula = ?', [req.body.cedula]);
