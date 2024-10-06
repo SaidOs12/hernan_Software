@@ -74,7 +74,7 @@ const schemasPersona = Joi.object({
 
 
   password: Joi.string()
-    .min(8)
+    .min(6)
     .required()
     .messages({
       'string.base': 'La contraseña debe ser una cadena de caracteres.',
