@@ -49,7 +49,7 @@ router.post('/infopersonal', async (req, res) => {
       
       console.log("BIEN")
       await pool.query('INSERT INTO persona SET ?', [persona]);
-      req.flash('success', 'Bibliotecario registrada correctamente');
+      req.flash('success', 'Usuario registrado correctamente');
       res.redirect('/infopersonal');
     }
   } catch (error) {
