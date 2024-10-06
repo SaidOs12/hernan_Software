@@ -45,69 +45,7 @@
 		<!--********** navbar vertical*************-->
 		{{> navbar}}
 
-        <div class="content-body">
-                <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12" style="width: 90%; margin-top: 20px; margin-bottom: 50px;">
-
-                    <div class="login-form style-2">
-                        <div class="card-body">
-                            <ul class="nav nav-tabs border-bottom-0" role="tablist">
-                            </ul>
-                            <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="nav-personal" role="tabpanel"
-                                    aria-labelledby="nav-personal-tab">
-                                    <form action="/infopersonal" method="POST" class="dz-form">
-                                        <div class="form-group mb-3">
-                                            <label for="nombre">Nombre</label>
-                                            <input type="text" name="nombre" class="form-control" required>
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="apellidos">Apellidos</label>
-                                            <input type="text" name="apellidos" class="form-control" required>
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-                                            <input type="date" name="fecha_nacimiento" class="form-control" required>
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="telefono">Teléfono</label>
-                                            <input type="tel" name="telefono" class="form-control" required>
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="direccion">Dirección</label>
-                                            <input type="text" name="direccion" class="form-control" required>
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="cedula">Cédula</label>
-                                            <input type="text" name="cedula" class="form-control" required>
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="tipo_usuario">Tipo de Lector</label>
-                                            <select name="tipo_usuario" class="form-control" required>
-                                                <option value="admin">Administrador</option>
-                                                <option value="bibliotecario">Bibliotecario</option>
-                                                <option value="profesor">Profesor</option>
-                                                <option value="estudiante">Estudiante</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="contrasena">Contraseña</label>
-                                            <input type="password" name="password" class="form-control" required>
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="password-confirm">Confirmar contraseña</label>
-                                            <input type="password" name="ppassword" class="form-control" required>
-                                        </div>
-                                        <div class="text-center">
-                                            <button class="btn btn-danger button-md btn-block" type="submit">Crear una
-                                                cuenta</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
+        
 
 
 
