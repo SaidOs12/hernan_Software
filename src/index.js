@@ -86,7 +86,6 @@ app.use(require('./routes/unidad43'));
 app.use(require('./routes/unidad44eva'));
 app.use(require('./routes/index'));
 app.use(require('./routes/usuario'));
-app.use(require('./routes/tablainformacion'));
 app.use(require('./routes/proceso'));
 app.use(require('./routes/register.js'));
 app.use(require('./routes/registerUser.js'));
