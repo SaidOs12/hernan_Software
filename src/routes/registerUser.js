@@ -8,13 +8,13 @@ router.get('/registroUser', (req, res) => {
   res.render('registro');
 });
 
-router.post('/infopersonal', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     console.log(req.body);
     const { error } = schemasPersona.validate(req.body);
     if (error) {
       req.flash('error', error.details[0].message);
-      res.redirect('/infopersonal');
+      res.redirect('/registroUser');
     }
     
         // Verificar si la cédula ya existe en la base de datos
@@ -25,7 +25,7 @@ router.post('/infopersonal', async (req, res) => {
   
           req.flash('error', 'La cédula ingresada ya está registrada');
   
-          res.redirect('/infopersonal');
+          res.redirect('/registroUser');
   
           return;
   
@@ -57,7 +57,7 @@ router.post('/infopersonal', async (req, res) => {
       console.log("BIEN")
       await pool.query('INSERT INTO persona SET ?', [persona]);
       req.flash('success', 'Persona registrada correctamente');
-      res.redirect('/infopersonal');
+      res.redirect('/inforpersonal');
     }
   } catch (error) {
     console.log("MAL")
