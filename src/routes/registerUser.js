@@ -4,24 +4,24 @@ const pool = require('../db');
 const bcrypt = require('bcryptjs');
 const schemasPersona = require('../schemas/schemasUsuario');
 
-router.get('/registroUser', (req, res) => {
+router.get('/infopersonal', (req, res) => {
   res.render('infopersonal');
 });
 
-router.post('/registroUser', async (req, res) => {
+router.post('/registerUser', async (req, res) => {
   try {
     console.log(req.body);
     const { error } = schemasPersona.validate(req.body);
     if (error) {
       req.flash('error', error.details[0].message);
-      res.redirect('/registroUser');
+      res.redirect('/infopersonal');
     }
     
     // Verificar si la cédula ya existe en la base de datos
     const existeCedula = await pool.query('SELECT * FROM persona WHERE cedula = ?', [req.body.cedula]);
     if (existeCedula.length > 0) {
       req.flash('error', 'La cédula ingresada ya está registrada');
-      res.redirect('/registroUser');
+      res.redirect('/infopersonal');
       return;
     }
     
