@@ -5,10 +5,10 @@ const bcrypt = require('bcryptjs');
 const schemasPersona = require('../schemas/schemasUsuario');
 
 router.get('/registroUser', (req, res) => {
-  res.render('registro');
+  res.render('infopersonal');
 });
 
-router.post('/', async (req, res) => {
+router.post('/registroUser', async (req, res) => {
   try {
     console.log(req.body);
     const { error } = schemasPersona.validate(req.body);
@@ -17,21 +17,15 @@ router.post('/', async (req, res) => {
       res.redirect('/registroUser');
     }
     
-        // Verificar si la cédula ya existe en la base de datos
-
-        const existeCedula = await pool.query('SELECT * FROM persona WHERE cedula = ?', [req.body.cedula]);
-
-        if (existeCedula.length > 0) {
-  
-          req.flash('error', 'La cédula ingresada ya está registrada');
-  
-          res.redirect('/registroUser');
-  
-          return;
-  
-        }
-        
-        else {
+    // Verificar si la cédula ya existe en la base de datos
+    const existeCedula = await pool.query('SELECT * FROM persona WHERE cedula = ?', [req.body.cedula]);
+    if (existeCedula.length > 0) {
+      req.flash('error', 'La cédula ingresada ya está registrada');
+      res.redirect('/registroUser');
+      return;
+    }
+    
+    else {
       const hashContraseña = bcrypt.hashSync(req.body.password, 10);
       const {
         nombre,
@@ -53,11 +47,10 @@ router.post('/', async (req, res) => {
         contrasena: hashContraseña
       };
       
-
       console.log("BIEN")
       await pool.query('INSERT INTO persona SET ?', [persona]);
       req.flash('success', 'Persona registrada correctamente');
-      res.redirect('/inforpersonal');
+      res.redirect('/infopersonal');
     }
   } catch (error) {
     console.log("MAL")
