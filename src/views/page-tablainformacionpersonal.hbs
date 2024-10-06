@@ -46,40 +46,32 @@
         <!--********** navbar vertical*************-->
         {{> navbar}}
 
-       <div class="content-body">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Usuarios</h5>
-            <br><br>
-            <div class="table-responsive">
-                <table id="example" class="table table-striped" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Rol</th>
-                            <th>Código</th>
-                            <th>Usuario</th>
-                            <th>Opción</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each usuario}}
-                        <tr>
-                            <td>{{idUsuario}}</td>
-                            <td>{{nombre}}</td>
-                            <td>{{rol}}</td>
-                            <td>{{codigo}}</td>
-                            <td>{{username}}</td>
-                            <td>Opción</td>
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
+      <div class="content-body">
+                <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12" style="width: 90%; margin-top: 20px; margin-bottom: 50px;">
+
+                    <div class="login-form style-2">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs border-bottom-0" role="tablist">
+                            </ul>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-personal" role="tabpanel"
+                                    aria-labelledby="nav-personal-tab">
+                                    <form action="/tablainfopersonal" method="POST" class="dz-form">
+                                        <div class="form-group mb-3">
+                                            <label for="cedula">Cédula</label>
+                                            <input type="text" name="cedula" class="form-control" required>
+                                        </div>
+                                        <div class="text-center">
+                                            <button class="btn btn-danger button-md btn-block" type="submit">Crear una
+                                                cuenta</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
 
     </div>
