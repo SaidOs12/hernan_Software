@@ -19,7 +19,7 @@ router.post('/login', async (req,res) =>{
       
       
       req.flash('success', 'Bienvenido usuario: ' +  busqueda[0].cedula)
-      if (busqueda[0].tipo_usuario === "administrador") {
+      if (busqueda[0].tipo_usuario === "admin") {
         res.redirect('/dashboard');
       } else if (busqueda[0].tipo_usuario === "bibliotecario") {
           res.redirect('/dashboardBibliotecario');
