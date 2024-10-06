@@ -19,7 +19,15 @@ router.post('/login', async (req,res) =>{
       
       
       req.flash('success', 'Bienvenido usuario: ' +  busqueda[0].cedula)
-      res.redirect('/dashboard');
+      if (busqueda[0].tipo_usuario === "administrador") {
+        res.redirect('/dashboard');
+      } else if (busqueda[0].tipo_usuario === "bibliotecario") {
+          res.redirect('/dashboardBibliotecario');
+      } else if (busqueda[0].tipo_usuario === "alumno") {
+        res.redirect('/dashboardAlumno');
+      } else if (busqueda[0].tipo_usuario === "profesor") {
+        res.redirect('/dashboardProfesor');
+      }
     } else {
       
       req.flash('error', 'La contraseña es incorrecta, ¿olvidaste tu contraseña?')
