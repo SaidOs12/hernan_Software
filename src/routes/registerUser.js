@@ -8,7 +8,7 @@ router.get('/infopersonal', (req, res) => {
   res.render('infopersonal');
 });
 
-router.post('/registerUser', async (req, res) => {
+router.post('/infopersonal', async (req, res) => {
   try {
     console.log(req.body);
     const { error } = schemasPersona.validate(req.body);
