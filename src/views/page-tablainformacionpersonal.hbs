@@ -46,22 +46,42 @@
         <!--********** navbar vertical*************-->
         {{> navbar}}
 
-      <div class="content-body">
-            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12" style="width: 90%; margin-top: 20px; margin-bottom: 50px;">
-                <div class="login-form style-2">
-                    <div class="card-body">
-                        <ul class="nav nav-tabs border-bottom-0" role="tablist">
-                        </ul>
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-personal" role="tabpanel"
-                                aria-labelledby="nav-personal-tab">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
+       <div class="content-body">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Usuarios</h5>
+            <br><br>
+            <div class="table-responsive">
+                <table id="example" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Rol</th>
+                            <th>Código</th>
+                            <th>Usuario</th>
+                            <th>Opción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each usuario}}
+                        <tr>
+                            <td>{{nombre}}</td>
+                            <td>{{apellidos}}</td>
+                            <td>{{fecha_nacimiento}}</td>
+                            <td>{{telefono}}</td>
+                            <td>{{direccion}}</td>
+                            <td>Opción</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
             </div>
         </div>
+    </div>
+</div>
+
+
     </div>
 
     <!--**********************************
@@ -76,6 +96,24 @@
 
 
     </div>
+
+    <script>
+        $(document).ready(function () {
+            var url = ''
+            $('#example').DataTable({
+
+                "Ajax": {
+
+                    "url": url,
+                    "dataSrc": ""
+                },
+
+                "columns": [
+                    { "data": "id" }
+                ]
+            });
+        });
+    </script>
 
     <!-- Required vendors -->
     <script src="./vendor/global/global.min.js"></script>

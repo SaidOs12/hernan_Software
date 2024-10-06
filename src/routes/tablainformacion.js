@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../db');
 
 router.get('/tablainfopersonal', async (req,res) =>{
-  const usuario = await pool.query('SELECT * FROM usuario');
+  const usuario = await pool.query('SELECT * FROM persona');
   res.render('page-tablainformacionpersonal',  { usuario });
 });
 
