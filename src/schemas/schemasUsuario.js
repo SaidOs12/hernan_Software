@@ -64,11 +64,11 @@ const schemasPersona = Joi.object({
     }),
 
   tipo_usuario: Joi.string()
-    .valid('admin', 'veterinario', 'operario_calidad')
+    .valid('admin', 'bibliotecario', 'profesor', 'alumno')
     .required()
     .messages({
       'string.base': 'El tipo de usuario debe ser una cadena de caracteres.',
-      'any.only': 'El tipo de usuario debe ser "admin", "veterinario" o "operario_calidad".',
+      'any.only': 'El tipo de usuario debe ser "admin", "bibliotecario", "profesor" o "alumno".',
       'any.required': 'El tipo de usuario es un campo obligatorio.'
     }),
 
