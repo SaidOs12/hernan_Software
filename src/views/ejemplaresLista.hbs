@@ -55,25 +55,25 @@
                         <table id="example" class="table table-striped" style="width:100%">
                             <thead>
                                 <tr>
+                                    <th>Id Inventario</th>
                                     <th>Nombre</th>
-                                    <th>Apellido</th>
-                                    <th>Fecha de Nacimiento</th>
-                                    <th>Teléfono</th>
-                                    <th>Dirección</th>
-                                    <th>Cédula</th>
-                                    <th>Tipo de Usuario</th>
+                                    <th>Fecha</th>
+                                    <th>Estado</th>
+                                    <th>Costo del ejemplar</th>
+                                    <th>Registro de Daños</th>
+                                    <th>Libro ISBN</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {{#each ejemplar}}
                                 <tr>
+                                    <td>{{idInventario}}</td>
                                     <td>{{nombre}}</td>
-                                    <td>{{apellidos}}</td>
-                                    <td>{{fecha_nacimiento}}</td>
-                                    <td>{{telefono}}</td>
-                                    <td>{{direccion}}</td>
-                                    <td>{{cedula}}</td>
-                                    <td>{{tipo_usuario}}</td>
+                                    <td>{{fecha}}</td>
+                                    <td>{{estado}}</td>
+                                    <td>{{costoEjemplar}}</td>
+                                    <td>{{registroDaños}}</td>
+                                    <td>{{libroISBN}}</td>
                                 </tr>
                                 {{/each}}
                             </tbody>
