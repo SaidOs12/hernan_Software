@@ -87,6 +87,7 @@ app.use(require('./routes/unidad44eva'));
 app.use(require('./routes/index'));
 app.use(require('./routes/usuario'));
 app.use(require('./routes/tablainformacion'));
+app.use(require('./routes/ejemplaresLista'));
 app.use(require('./routes/proceso'));
 app.use(require('./routes/register.js'));
 app.use(require('./routes/registerUser.js'));
@@ -97,7 +98,7 @@ app.use(require('./routes/respuesta'));
 app.use(require('./routes/autentificacion'));
 app.use(require('./routes/unidad11'));
 app.use(require('./routes/dashboardBibliotecario'));
-app.use(require('./routes/ejemplaresLista'));
+
 //Public
 app.use(express.static(path.join(__dirname, 'public')));
 //Arrancando el servidor
