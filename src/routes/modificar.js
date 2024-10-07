@@ -19,11 +19,6 @@ router.post('/page-modificacion', async (req, res) => {
     
     const { cedula, nombre, apellidos, telefono, direccion } = req.body;
 
-    // Update the user information
-    await pool.query(
-      'UPDATE persona SET nombre = ?, apellidos = ?, telefono = ?, direccion = ? WHERE cedula = ?',
-      [nombre, apellidos, telefono, direccion, cedula]
-    );
 
     req.flash('success', 'Usuario actualizado correctamente');
     res.redirect('/page-actualizar');
