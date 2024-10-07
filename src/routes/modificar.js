@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../db');
 const bcrypt = require('bcryptjs');
-const schemasPersona = require('../schemas/schemasUsuario');
+const schemasPersona = require('../schemas/schemasUsuarioAct');
 
 router.get('/page-modificacion', async (req, res) => {
   res.render('page-modificacion');
