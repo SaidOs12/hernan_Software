@@ -14,7 +14,7 @@ router.post('/proceso', async (req,res) =>{
     await pool.query('DELETE FROM persona WHERE cedula = ?', [cedula]);
     
     req.flash('success', 'Usuario eliminado correctamente');
-    res.redirect('/page-bancopreguntas'); // O redirige a donde prefieras después de eliminar
+    res.redirect('/unidadUnoAgregar'); 
   } catch (error) {
       console.error(error);
       res.status(500).send("Error en la petición: " + error.message);
