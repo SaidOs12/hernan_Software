@@ -13,7 +13,8 @@ router.post('/proceso', async (req,res) =>{
     // Si el usuario existe, lo eliminamos
     await pool.query('DELETE FROM persona WHERE cedula = ?', [cedula]);
     
-    req.flash('success', [cedula]);
+    req.flash('success', 'Usuario eliminado correctamente ${cedula}');
+    
     res.redirect('/unidadUnoAgregar'); 
   } catch (error) {
       console.error(error);
