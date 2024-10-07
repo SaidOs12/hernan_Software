@@ -17,7 +17,7 @@ router.post('/page-actualizar', async (req,res) =>{
         const busqueda = await pool.query('SELECT * FROM persona WHERE cedula  = ?', [req.body.cedula])
         if (busqueda.length!==0){
             const usuario = await pool.query('SELECT * FROM persona WHERE cedula  = ?', [req.body.cedula]);
-            res.render('page-proceso',  { usuario });
+            res.render('page-modificacion',  { usuario });
         }else {
     
             req.flash('error', 'No se encontro ningun usuario con esa cedula registrada')
