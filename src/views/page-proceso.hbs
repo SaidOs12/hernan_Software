@@ -26,29 +26,108 @@
     
 </head>
 
-<body class="vh-100">
-    <div class="authincation h-100">
-		<div class="container ">
-			<div class="row justify-content-center h-100 align-items-center">
-				<div class="col-md-6">
-					<div class="error-page">
-						<div class="error-inner text-center">
-							<div class="dz-error" data-text="400">400</div>
-							<h2 class="error-head">We are sorry. But the page you are looking for cannot be found.</h2>
-							<a href="index.html" class="btn btn-secondary">BACK TO HOMEPAGE</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+<body data-typography="poppins" data-theme-version="light" data-layout="vertical">
+
+
+
+    <div id="main-wrapper">
+
+      	<!--********** navbar horizontal*************-->
+		{{> navbarhor}}
+
+		<!--********** navbar vertical*************-->
+		{{> navbar}}
+
+        <div class="content-body">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Usuarios</h5>
+                    <br><br>
+                    <br class="table-responsive">
+                        <table id="example" class="table table-striped" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Fecha de Nacimiento</th>
+                                    <th>Teléfono</th>
+                                    <th>Dirección</th>
+                                    <th>Cédula</th>
+                                    <th>Tipo de Usuario</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each usuario}}
+                                <tr>
+                                    <td>{{nombre}}</td>
+                                    <td>{{apellidos}}</td>
+                                    <td>{{fecha_nacimiento}}</td>
+                                    <td>{{telefono}}</td>
+                                    <td>{{direccion}}</td>
+                                    <td>{{cedula}}</td>
+                                    <td>{{tipo_usuario}}</td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                        </br>
+                        <form action="/proceso" method="POST">
+                                    <input type="hidden" name="cedula" value="{{cedula}}">
+                                    <button type="submit" class="btn btn-danger">
+                                        <em class="icon ni ni-question"></em>
+                                        <span>Eliminar</span>
+                                    </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!--**********************************
+            Footer start
+        ***********************************-->
+   {{> footerhor}}
+
+
     </div>
-	
-<!--**********************************
-	Scripts
-***********************************-->
-<!-- Required vendors -->
-<script src="./vendor/global/global.min.js"></script>
-<script src="./js/custom.js"></script>
-<script src="./js/deznav-init.js"></script>
+
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="vendor/apexchart/apexchart.js"></script>
+
+    <!-- Dashboard 1 -->
+    <script src="js/dashboard/dashboard-1.js"></script>
+    <script src="vendor/draggable/draggable.js"></script>
+
+
+    <!-- tagify -->
+    <script src="vendor/tagify/dist/tagify.js"></script>
+
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/js/dataTables.buttons.min.js"></script>
+    <script src="vendor/datatables/js/buttons.html5.min.js"></script>
+    <script src="vendor/datatables/js/jszip.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+
+    <!-- Apex Chart -->
+
+    <script src="vendor/bootstrap-datetimepicker/js/moment.js"></script>
+    <script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+
+    <!-- Vectormap -->
+    <script src="vendor/jqvmap/js/jquery.vmap.min.js"></script>
+    <script src="vendor/jqvmap/js/jquery.vmap.world.js"></script>
+    <script src="vendor/jqvmap/js/jquery.vmap.usa.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/deznav-init.js"></script>
+    <script src="js/demo.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+
+
 </body>
 </html>
