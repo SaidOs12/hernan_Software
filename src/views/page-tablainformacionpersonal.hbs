@@ -47,41 +47,41 @@
         {{> navbar}}
 
        <div class="content-body">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Usuarios</h5>
-            <br><br>
-            <div class="table-responsive">
-                <table id="example" class="table table-striped" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Fecha de Nacimiento</th>
-                            <th>Teléfono</th>
-                            <th>Dirección</th>
-                            <th>Cédula</th>
-                            <th>Tipo de Usuario</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each usuario}}
-                        <tr>
-                            <td>{{nombre}}</td>
-                            <td>{{apellidos}}</td>
-                            <td>{{fecha_nacimiento}}</td>
-                            <td>{{telefono}}</td>
-                            <td>{{direccion}}</td>
-                            <td>{{cedula}}</td>
-                            <td>{{tipo_usuario}}</td>
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Usuarios</h5>
+                    <br><br>
+                    <div class="table-responsive">
+                        <table id="example" class="table table-striped" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Fecha de Nacimiento</th>
+                                    <th>Teléfono</th>
+                                    <th>Dirección</th>
+                                    <th>Cédula</th>
+                                    <th>Tipo de Usuario</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each usuario}}
+                                <tr>
+                                    <td>{{nombre}}</td>
+                                    <td>{{apellidos}}</td>
+                                    <td>{{fecha_nacimiento}}</td>
+                                    <td>{{telefono}}</td>
+                                    <td>{{direccion}}</td>
+                                    <td>{{cedula}}</td>
+                                    <td>{{tipo_usuario}}</td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
 
     </div>
