@@ -60,6 +60,7 @@ app.use((req,res,next) => {
 app.use(require('./routes/routes'));
 app.use(require('./routes/recuperarcontra'));
 app.use(require('./routes/contranueva'));
+app.use(require('./routes/dashboardBibliotecario'));
 app.use(require('./routes/login'));
 app.use(require('./routes/unidad12'));
 app.use(require('./routes/unidad13'));
@@ -97,7 +98,7 @@ app.use(require('./routes/modificar'));
 app.use(require('./routes/respuesta'));
 app.use(require('./routes/autentificacion'));
 app.use(require('./routes/unidad11'));
-app.use(require('./routes/dashboardBibliotecario'));
+
 
 //Public
 app.use(express.static(path.join(__dirname, 'public')));
