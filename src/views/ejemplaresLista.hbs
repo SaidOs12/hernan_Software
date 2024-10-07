@@ -39,21 +39,42 @@
 <body data-typography="poppins" data-theme-version="light" data-layout="vertical">
 
 	<div id="main-wrapper">
-
 		<!--********** navbar horizontal*************-->
 		{{>navbarhor}}
 
 		<!--********** navbar vertical*************-->
-		{{> navbarBiblio}}
-		<div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-			<h1 className="text-4xl font-bold mb-8 text-blue-600">Bienvenido Bibliotecario</h1>
-			<div className="w-3/4 h-3/4 bg-gray-300 flex items-center justify-center">
-				<img src="https://i.ibb.co/XXNCt13/th.jpg" alt="Imagen de bienvenida"
-				className="max-w-full max-h-full object-cover"
-				/>
-			</div>
-		</div>
+		{{> navbar}}
 	</div>
+		<h1>Lista de Ejemplares</h1>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Título</th>
+					<th>Autor</th>
+					<th>ISBN</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each ejemplares}}
+				<tr>
+					<td>{{this.id}}</td>
+					<td>{{this.titulo}}</td>
+					<td>{{this.autor}}</td>
+					<td>{{this.isbn}}</td>
+					<td>
+						<form action="/ejemplares/eliminar/{{this.id}}" method="POST" style="display:inline;">
+							<button type="submit">Eliminar</button>
+						</form>
+						<a href="/ejemplares/modificar/{{this.id}}">Modificar</a>
+					</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+		<br>
+		<a href="/ejemplares/agregar">Agregar nuevo ejemplar</a>
 
 {{> footerhor}}
 
@@ -93,7 +114,7 @@
 	<script src="/js/styleSwitcher.js"></script>
 
 
-
+	
 </body>
 
 </html>
