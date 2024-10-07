@@ -22,7 +22,7 @@ router.post('/login', async (req,res) =>{
       if (busqueda[0].tipo_usuario === "admin") {
         res.redirect('/dashboard');
       } else if (busqueda[0].tipo_usuario === "bibliotecario") {
-          res.redirect('/dashboardBibliotecario');
+        res.redirect('/dashboardBibliotecario');
       } else if (busqueda[0].tipo_usuario === "alumno") {
         res.redirect('/dashboardAlumno');
       } else if (busqueda[0].tipo_usuario === "profesor") {
