@@ -92,6 +92,7 @@ app.use(require('./routes/register.js'));
 app.use(require('./routes/registerUser.js'));
 app.use(require('./routes/evaluacion'));
 app.use(require('./routes/actualizacion'));
+app.use(require('./routes/modificar'));
 app.use(require('./routes/respuesta'));
 app.use(require('./routes/autentificacion'));
 app.use(require('./routes/unidad11'));

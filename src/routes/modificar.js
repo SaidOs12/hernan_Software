@@ -14,7 +14,7 @@ router.post('/page-modificacion', async (req, res) => {
     const { error } = schemasPersona.validate(req.body);
     if (error) {
       req.flash('error', error.details[0].message);
-      res.redirect('/registro');
+      res.redirect('/page-modificacion');
     }
     
     const { cedula, nombre, apellidos, telefono, direccion } = req.body;
