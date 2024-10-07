@@ -81,10 +81,13 @@
                             </tbody>
                         </table>
                         </br>
-                        <button type="submit>"
-                        <a href=""  class="btn btn-danger text-end"><em
-                                class="icon ni ni-question"></em><span>Eliminar</span> </a> </button>
-                        
+                        <form action="/proceso" method="POST">
+                                    <input type="hidden" name="cedula" value="{{cedula}}">
+                                    <button type="submit" class="btn btn-danger">
+                                        <em class="icon ni ni-question"></em>
+                                        <span>Eliminar</span>
+                                    </button>
+                        </form>
                     </div>
                 </div>
             </div>
