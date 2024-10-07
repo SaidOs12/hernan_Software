@@ -96,6 +96,7 @@ app.use(require('./routes/modificar'));
 app.use(require('./routes/respuesta'));
 app.use(require('./routes/autentificacion'));
 app.use(require('./routes/unidad11'));
+app.use(require('./routes/dashboardBibliotecario'));
 
 //Public
 app.use(express.static(path.join(__dirname, 'public')));
