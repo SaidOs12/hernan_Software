@@ -4,7 +4,7 @@ const pool = require('../db');
 
 router.get('/ejemplaresLista', async (req,res) =>{
   const usuario = await pool.query('SELECT * FROM ejemplar');
-  res.render('ejemplaresLista2',  { ejemplar });
+  res.render('page-ejemplaresLista',  { ejemplar });
 });
 
 module.exports = router;  
