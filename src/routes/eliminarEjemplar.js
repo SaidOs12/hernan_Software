@@ -8,7 +8,7 @@ router.get('/eliminarEjemplar', async (req,res) =>{
 });
 router.post('/eliminarEjemplar', async (req,res) =>{
   try {
-    const { cedula } = req.body;
+    const { idInventario } = req.body;
     
     // Si el usuario existe, lo eliminamos
     await pool.query('DELETE FROM ejemplar WHERE idInventario = ?', [idInventario]);
