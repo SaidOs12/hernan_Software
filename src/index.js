@@ -92,13 +92,13 @@ app.use(require('./routes/ejemplaresLista'));
 app.use(require('./routes/proceso'));
 app.use(require('./routes/register.js'));
 app.use(require('./routes/registerUser.js'));
+app.use(require('./routes/registerBook.js'));
 app.use(require('./routes/evaluacion'));
 app.use(require('./routes/actualizacion'));
 app.use(require('./routes/modificar'));
 app.use(require('./routes/respuesta'));
 app.use(require('./routes/autentificacion'));
 app.use(require('./routes/unidad11'));
-app.use(require('./routes/agregarLibro'));
 
 
 //Public
