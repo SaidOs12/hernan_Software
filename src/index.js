@@ -100,6 +100,9 @@ app.use(require('./routes/modificar'));
 app.use(require('./routes/respuesta'));
 app.use(require('./routes/autentificacion'));
 app.use(require('./routes/unidad11'));
+app.use(require('./routes/eliminarEjemplar'));
+app.use(require('./routes/actualizacionEjemplar.js'))
+app.use(require('./routes/modificarEjemplar'))
 
 
 //Public
