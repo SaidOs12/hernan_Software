@@ -62,6 +62,8 @@
                                     <th>Costo del ejemplar</th>
                                     <th>Registro de Daños</th>
                                     <th>Libro ISBN</th>
+                                    <th>Eliminar</th>
+                                    <th>Modificar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -74,6 +76,24 @@
                                     <td>{{costoEjemplar}}</td>
                                     <td>{{registroDaños}}</td>
                                     <td>{{libroISBN}}</td>
+                                    <td>
+										<form action="/eliminarEjemplar" method="POST">
+											<input type="hidden" name="idInventario" value="{{idInventario}}">
+											<button type="submit" class="btn btn-danger btn-sm">
+												<em class="icon ni ni-trash"></em>
+												<span>Eliminar</span>
+											</button>
+										</form>
+									</td>
+                                    <td>
+										<form action="/page-actualizarEjemplar" method="POST">
+											<input type="hidden" name="idInventario" value="{{idInventario}}">
+											<button type="submit" class="btn btn-danger btn-sm">
+												<em class="icon ni ni-trash"></em>
+												<span>Actualizar</span>
+											</button>
+										</form>
+									</td>
                                 </tr>
                                 {{/each}}
                             </tbody>

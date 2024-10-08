@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../db');
 
-router.get('/page-modificacion', async (req, res) => {
-  res.render('page-modificacion');
+router.get('/page-modificacionEjem', async (req, res) => {
+  res.render('page-modificacionEjem');
 });
 
-router.post('/page-modificacion', async (req, res) => {
+router.post('/page-modificacionEjem', async (req, res) => {
   try {
     const { cedula, nombre, apellidos, telefono, direccion } = req.body;
 
