@@ -4,11 +4,11 @@ const pool = require('../db');
 const bcrypt = require('bcryptjs');
 const schemasPersona = require('../schemas/schemasUsuario');
 
-router.get('/page-registerBook', (req, res) => {
-  res.render('page-registerBook');
+router.get('/agregarLibro', (req, res) => {
+  res.render('agregarLibro');
 });
 
-router.post('/page-registerBook', async (req, res) => {
+router.post('/agregarLibro', async (req, res) => {
   try {
     console.log(req.body);
     /**const { error } = schemasPersona.validate(req.body);
@@ -21,7 +21,7 @@ router.post('/page-registerBook', async (req, res) => {
     const existeID = await pool.query('SELECT * FROM persona WHERE cedula = ?', [req.body.idInventario]);
     if (existeID.length > 0) {
       req.flash('error', 'La id del Ejemplar ya esta registrado');
-      res.redirect('/page-registerBook');
+      res.redirect('/agregarLibro');
       return;
     }
     
@@ -54,7 +54,7 @@ router.post('/page-registerBook', async (req, res) => {
       console.log("BIEN")
       await pool.query('INSERT INTO ejemplar SET ?', [ejemplar]);
       req.flash('success', 'Ejemplar registrado correctamente');
-      res.redirect('/page-registerBook');
+      res.redirect('/agregarLibro');
     }
   } catch (error) {
     console.log("MAL")

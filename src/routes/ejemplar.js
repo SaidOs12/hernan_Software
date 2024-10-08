@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/agregarLibro', (req, res) => {
+router.get('/agregarLibro', async (req,res) =>{
   res.render('page-registerBook');
 });
 
