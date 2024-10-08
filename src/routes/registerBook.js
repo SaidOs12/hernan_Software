@@ -53,7 +53,7 @@ router.post('/agregarLibro', async (req, res) => {
       
       console.log("BIEN")
       await pool.query('INSERT INTO ejemplar SET ?', [ejemplar]);
-      req.flash('success', 'Usuario registrado correctamente');
+      req.flash('success', 'Ejemplar registrado correctamente');
       res.redirect('/agregarLibro');
     }
   } catch (error) {
