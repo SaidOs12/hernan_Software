@@ -17,7 +17,7 @@ router.post('/page-modificacionEjem', async (req, res) => {
     );
 
     req.flash('success', 'Ejemplar actualizado correctamente');
-    res.redirect('/page-ejemplaresLista');
+    res.redirect('/ejemplaresListas');
   } catch (error) {
     console.error(error);
     res.status(500).send("Error en la petición: " + error.message);

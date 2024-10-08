@@ -15,7 +15,7 @@ router.post('/eliminarEjemplar', async (req,res) =>{
     
     req.flash('success', 'Ejemplar eliminado correctamente');
     
-    res.redirect('/page-ejemplaresLista'); 
+    res.redirect('/ejemplaresListas'); 
   } catch (error) {
       console.error(error);
       res.status(500).send("Error en la petición: " + error.message);
