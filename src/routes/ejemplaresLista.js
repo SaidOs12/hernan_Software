@@ -10,7 +10,7 @@ router.get('/ejemplaresListas', async (req,res) =>{
 });
 
 
-router.get('/actualizarEjemplar', async (req,res) =>{
+router.get('/modificarEjemplar', async (req,res) =>{
   try{
       const ejemplar = await pool.query('SELECT * FROM ejemplar WHERE idInventario  = ?', [req.body.idInventario]);
       res.render('page-modificacionEjem',  { ejemplar });
