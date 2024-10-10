@@ -18,16 +18,7 @@ router.post('/agregarLibro', async (req, res) => {
     }*/
     
     // Verificar si la cédula ya existe en la base de datos
-    const existeID = await pool.query('SELECT * FROM ejemplar WHERE idInventario = ?', [req.body.idInventario]);
-    if (existeID.length > 0) {
-      req.flash('error', 'La id del Ejemplar ya esta registrado');
-      res.redirect('/agregarLibro');
-      return;
-    }
-    
-    else {
       const {
-        idInventario,
         nombre,
         fecha,
         estado,
@@ -39,7 +30,6 @@ router.post('/agregarLibro', async (req, res) => {
         año
       } = req.body;
       const ejemplar = {
-        idInventario,
         nombre,
         fecha,
         estado,
@@ -55,7 +45,7 @@ router.post('/agregarLibro', async (req, res) => {
       await pool.query('INSERT INTO ejemplar SET ?', [ejemplar]);
       req.flash('success', 'Ejemplar registrado correctamente');
       res.redirect('/agregarLibro');
-    }
+    
   } catch (error) {
     console.log("MAL")
     res.status(400).send('Error FATAL: ' + error);

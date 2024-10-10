@@ -33,43 +33,46 @@ router.post('/registroPrestamo', async (req, res) => {
         if(existeIDInv.estado != "Disponible"){
           req.flash('error', 'El ejemplar no se encuentra disponible');
           res.redirect('/registroPrestamo');
-        return;
+          return;
         }else{
-          if(existeID.estado != "Disponible"){
-
+          if(existeID.multado){
+            req.flash('error', 'El usuario se encuentra multado');
+            res.redirect('/registroPrestamo');
+            return;
+          }else{
+            if(req.body.multa){
+              await pool.query(
+                'UPDATE persona SET multado = ? WHERE cedula = ?',
+                [req.body.multa, req.body.cedula]
+              ); 
+            }
+            const fecDev = null;
+            const {
+              idPrestamo,
+              idInventario,
+              cedula,
+              fecha,
+              fechaTope,
+              multa,
+            } = req.body;
+            const prestamo = {
+              idPrestamo,
+              idInventario,
+              cedula,
+              fecha,
+              fechaTope,
+              fecDev,
+              multa,
+            }
           }
-        }
-        
-        const {
-          idInventario,
-          nombre,
-          fecha,
-          estado,
-          costoEjemplar,
-          registroDaños,
-          libroISBN,
-          autor,
-          editorial,
-          año
-        } = req.body;
-        const ejemplar = {
-          idInventario,
-          nombre,
-          fecha,
-          estado,
-          costoEjemplar,
-          registroDaños,
-          libroISBN,
-          autor,
-          editorial,
-          año,
+
           
         };
         
         console.log("BIEN")
-        await pool.query('INSERT INTO ejemplar SET ?', [ejemplar]);
-        req.flash('success', 'Ejemplar registrado correctamente');
-        res.redirect('/agregarLibro');
+        await pool.query('INSERT INTO prestamo SET ?', [prestamo]);
+        req.flash('success', 'Prestado registrado correctamente');
+        res.redirect('/registroPrestamo');
       }
     }
   } catch (error) {
