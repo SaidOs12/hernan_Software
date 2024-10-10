@@ -32,6 +32,7 @@ router.post('/registro', async (req, res) => {
         }
         
         else {
+      const multado = false;
       const hashContraseña = bcrypt.hashSync(req.body.password, 10);
       const {
         nombre,
@@ -50,7 +51,8 @@ router.post('/registro', async (req, res) => {
         direccion,
         cedula,
         tipo_usuario,
-        contrasena: hashContraseña
+        contrasena: hashContraseña,
+        multado
       };
       
 

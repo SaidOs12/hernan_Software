@@ -18,7 +18,7 @@ router.post('/agregarLibro', async (req, res) => {
     }*/
     
     // Verificar si la cédula ya existe en la base de datos
-    const existeID = await pool.query('SELECT * FROM persona WHERE cedula = ?', [req.body.idInventario]);
+    const existeID = await pool.query('SELECT * FROM ejemplar WHERE idInventario = ?', [req.body.idInventario]);
     if (existeID.length > 0) {
       req.flash('error', 'La id del Ejemplar ya esta registrado');
       res.redirect('/agregarLibro');
