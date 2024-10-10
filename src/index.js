@@ -101,7 +101,6 @@ app.use(require('./routes/respuesta'));
 app.use(require('./routes/autentificacion'));
 app.use(require('./routes/unidad11'));
 app.use(require('./routes/eliminarEjemplar'));
-app.use(require('./routes/actualizacionEjemplar'))
 app.use(require('./routes/modificarEjemplar'))
 
 
