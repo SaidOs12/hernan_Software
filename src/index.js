@@ -92,6 +92,8 @@ app.use(require('./routes/usuario'));
 app.use(require('./routes/ejemplar'));
 app.use(require('./routes/tablainformacion'));
 app.use(require('./routes/ejemplaresLista'));
+app.use(require('./routes/ejemplaresListaAlumno'));
+app.use(require('./routes/ejemplaresListaProfesor'));
 app.use(require('./routes/proceso'));
 app.use(require('./routes/register.js'));
 app.use(require('./routes/registerUser.js'));
