@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 
 router.get('/ejemplaresListasAlumno', async (req,res) =>{
   const ejemplar = await pool.query('SELECT * FROM ejemplar');
-  res.render('page-ejemplaresLista',  { ejemplar });
+  res.render('page-ejemplaresListaAlumno',  { ejemplar });
 });
 
 
