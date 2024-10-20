@@ -61,6 +61,8 @@ app.use(require('./routes/routes'));
 app.use(require('./routes/recuperarcontra'));
 app.use(require('./routes/contranueva'));
 app.use(require('./routes/dashboardBibliotecario'));
+app.use(require('./routes/dashboardProfesor'));
+app.use(require('./routes/dashboardAlumno'));
 app.use(require('./routes/login'));
 app.use(require('./routes/unidad12'));
 app.use(require('./routes/unidad13'));
