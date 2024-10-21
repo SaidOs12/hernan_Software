@@ -90,6 +90,7 @@ app.use(require('./routes/unidad44eva'));
 app.use(require('./routes/index'));
 app.use(require('./routes/usuario'));
 app.use(require('./routes/ejemplar'));
+app.use(require('./routes/prestamo'));
 app.use(require('./routes/tablainformacion'));
 app.use(require('./routes/ejemplaresLista'));
 app.use(require('./routes/ejemplaresListaAlumno'));
