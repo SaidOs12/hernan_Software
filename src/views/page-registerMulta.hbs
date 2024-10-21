@@ -15,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>BIBUJA</title>
+    <title>Biblioteca Virtual BIBUJA</title>
 
 
     <link href="/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
@@ -28,10 +28,10 @@
     <link href="vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 
     <!-- tagify-css -->
-    <link href="./vendor/tagify/dist/tagify.css" rel="stylesheet">
+    <link href="/vendor/tagify/dist/tagify.css" rel="stylesheet">
 
     <!-- Style css -->
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -39,102 +39,72 @@
 
 
     <div id="main-wrapper">
+    	<!--********** navbar horizontal*************-->
+		{{>navbarhor}}
 
-        <!--********** navbar horizontal*************-->
-        {{>navbarhor}}
+		<!--********** navbar vertical*************-->
+		{{> navbarBiblio}}
 
-        <!--********** navbar vertical*************-->
-        {{> navbarBiblio}}
+        <div class="content-body">
+                <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12" style="width: 90%; margin-top: 20px; margin-bottom: 50px;">
 
-       <div class="content-body">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Ejemplares</h5>
-                    <br><br>
-                    <div class="table-responsive">
-                        <table id="example" class="table table-striped" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>Id Inventario</th>
-                                    <th>Nombre</th>
-                                    <th>Fecha</th>
-                                    <th>Estado</th>
-                                    <th>Costo del ejemplar</th>
-                                    <th>Registro de Daños</th>
-                                    <th>Libro ISBN</th>
-                                    <th>Eliminar</th>
-                                    <th>Modificar</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{#each ejemplar}}
-                                <tr>
-                                    <td>{{idInventario}}</td>
-                                    <td>{{nombre}}</td>
-                                    <td>{{fecha}}</td>
-                                    <td>{{estado}}</td>
-                                    <td>{{costoEjemplar}}</td>
-                                    <td>{{registroDaños}}</td>
-                                    <td>{{libroISBN}}</td>
-                                    <td>
-										<form action="/eliminarEjemplar" method="POST">
-											<input type="hidden" name="idInventario" value="{{idInventario}}">
-											<button type="submit" class="btn btn-danger btn-sm">
-												<em class="icon ni ni-trash"></em>
-												<span>Eliminar</span>
-											</button>
-										</form>
-									</td>
-                                    <td>
-										<form action="/modificarEjemplar" method="POST">
-											<input type="hidden" name="idInventario" value="{{idInventario}}">
-											<button type="submit" class="btn btn-danger btn-sm">
-												<em class="icon ni ni-trash"></em>
-												<span>Actualizar</span>
-											</button>
-										</form>
-									</td>
-                                </tr>
-                                {{/each}}
-                            </tbody>
-                        </table>
-                    </div>
+                    <div class="login-form style-2">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs border-bottom-0" role="tablist">
+                            </ul>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-personal" role="tabpanel"
+                                    aria-labelledby="nav-personal-tab">
+                                    <form action="/registroMulta" method="POST" class="dz-form">
+                                        <div class="form-group mb-3">
+                                            <label for="idInventario">Id Inventario</label>
+                                            <input type="text" name="idInventario" class="form-control" required>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="nombre">Cedula</label>
+                                            <input type="text" name="cedula" class="form-control" required>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="fecha">Fecha</label>
+                                            <input type="date" name="fecha" class="form-control" required>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="fecha">FechaTope</label>
+                                            <input type="date" name="fecha" class="form-control" required>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="multa">Multa?</label>
+                                            <select type="boolean" name="estado" class="form-control" required>
+                                                <option value="true">Si</option>
+                                                <option value="false">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="text-center">
+                                            <button class="btn btn-danger button-md btn-block" type="submit">Registrar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
 
 
-    </div>
 
-    <!--**********************************
+        <!--**********************************
             Content body end
         ***********************************-->
+     
 
-
-    <!--**********************************
+        <!--**********************************
             Footer start
         ***********************************-->
-    {{> footerhor}}
+     {{> footerhor}}
 
 
     </div>
-    <script>
-        $(document).ready(function () {
-            var url = ''
-            $('#example').DataTable({
 
-                "Ajax": {
-
-                    "url": url,
-                    "dataSrc": ""
-                },
-
-                "columns": [
-                    { "data": "id" }
-                ]
-            });
-        });
-    </script>
     <!-- Required vendors -->
     <script src="./vendor/global/global.min.js"></script>
     <script src="./vendor/chart.js/Chart.bundle.min.js"></script>

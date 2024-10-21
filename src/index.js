@@ -107,6 +107,7 @@ app.use(require('./routes/unidad11'));
 app.use(require('./routes/eliminarEjemplar'));
 app.use(require('./routes/modificarEjemplar'))
 app.use(require('./routes/registerPrestamo'))
+app.use(require('./routes/registerMulta'))
 
 //Public
 app.use(express.static(path.join(__dirname, 'public')));
