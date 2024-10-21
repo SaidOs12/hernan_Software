@@ -4,11 +4,11 @@ const pool = require('../db');
 const bcrypt = require('bcryptjs');
 const schemasPersona = require('../schemas/schemasUsuario');
 
-router.get('/registroPrestamo', (req, res) => {
-  res.render('registroPrestamo');
+router.get('/registerPrestamo', (req, res) => {
+  res.render('registerPrestamo');
 });
 
-router.post('/registroPrestamo', async (req, res) => {
+router.post('/registerPrestamo', async (req, res) => {
   try {
     console.log(req.body);
     /**const { error } = schemasPersona.validate(req.body);
