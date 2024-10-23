@@ -16,7 +16,7 @@ router.post('/registerPrestamo', async (req, res) => {
     const existeIDInv = await pool.query('SELECT * FROM ejemplar WHERE idInventario = ?', [req.body.idInventario]);
     const existeID = await pool.query('SELECT * FROM persona WHERE cedula = ?', [req.body.cedula]);
     const limitePres = await pool.query('SELECT * FROM prestamo WHERE cedula = ?', [req.body.cedula]);
-    const diferenciaDias = Math.floor((fechaTope - fechaPrestamo) / (1000 * 60 * 60 * 24));
+    const diferenciaDias = Math.floor((req.body.fechaTope - req.body.fecha) / (1000 * 60 * 60 * 24));
     if (existeID.length == 0) {
       req.flash('error', 'La cedula no esta registrada');
       res.redirect('/registerPrestamo');
