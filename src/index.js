@@ -99,6 +99,7 @@ app.use(require('./routes/proceso'));
 app.use(require('./routes/register.js'));
 app.use(require('./routes/registerUser.js'));
 app.use(require('./routes/registerBook.js'));
+app.use(require('./routes/registerMulta'));
 app.use(require('./routes/evaluacion'));
 app.use(require('./routes/actualizacion'));
 app.use(require('./routes/modificar'));

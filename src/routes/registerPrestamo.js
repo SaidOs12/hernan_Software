@@ -21,24 +21,6 @@ router.post('/registerPrestamo', async (req, res) => {
     const existeIDInv = await pool.query('SELECT * FROM ejemplar WHERE idInventario = ?', [req.body.idInventario]);
     const existeID = await pool.query('SELECT * FROM persona WHERE cedula = ?', [req.body.cedula]);
     const limitePres = await pool.query('SELECT * FROM prestamo WHERE cedula = ?', [req.body.cedula]);
-    const fecDev = null;
-              const multa = false;
-              const {
-                idPrestamo,
-                idInventario,
-                cedula,
-                fecha,
-                fechaTope,
-              } = req.body;
-              const prestamo = {
-                idPrestamo,
-                idInventario,
-                cedula,
-                fecha,
-                fechaTope,
-                fecDev,
-                multa,
-              }
     if (existeID.length == 0) {
       req.flash('error', 'La cedula no esta registrada');
       res.redirect('/registerPrestamo');
@@ -49,7 +31,7 @@ router.post('/registerPrestamo', async (req, res) => {
         res.redirect('/registerPrestamo');
       return;
       }else {
-        if(prestamo.estado != "Disponible"){
+        if(existeIDInv.estado != "Disponible"){
           req.flash('error', 'El ejemplar no se encuentra disponible');
           res.redirect('/registerPrestamo');
           return;
@@ -64,10 +46,37 @@ router.post('/registerPrestamo', async (req, res) => {
               res.redirect('/registerPrestamo');
               return;
             }else{
+              const fecDev = null;
+              const {
+                idPrestamo,
+                idInventario,
+                cedula,
+                fecha,
+                fechaTope,
+                multa,
+              } = req.body;
+              const prestamo = {
+                idPrestamo,
+                idInventario,
+                cedula,
+                fecha,
+                fechaTope,
+                fecDev,
+                multa,
+              }
               console.log("BIEN")
               await pool.query('INSERT INTO prestamo SET ?', [prestamo]);
-              req.flash('success', 'Prestado registrado correctamente');
-              res.redirect('/registerPrestamo');
+              if(req.body.multa){
+                await pool.query(
+                  'UPDATE persona SET multado = ? WHERE cedula = ?',
+                  [req.body.multa, req.body.cedula]
+                ); 
+                req.flash('success', 'Prestado registrado, procedemos con la multa');
+                res.redirect('/registerMulta');
+              }else{
+                req.flash('success', 'Prestado registrado correctamente');
+                res.redirect('/registerPrestamo');
+              }
               
             }
           }
