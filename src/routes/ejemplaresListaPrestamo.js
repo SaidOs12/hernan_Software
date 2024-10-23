@@ -5,7 +5,7 @@ const joi = require('joi');
 const bcrypt = require('bcryptjs');
 
 router.get('/ejemplaresListasPrestamo', async (req,res) =>{
-  const ejemplar = await pool.query('SELECT * FROM prestamo');
+  const prestamo = await pool.query('SELECT * FROM prestamo');
   res.render('page-ejemplaresListaPrestamo',  { prestamo });
 });
 
