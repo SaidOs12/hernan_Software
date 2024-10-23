@@ -42,7 +42,7 @@ router.post('/registerPrestamo', async (req, res) => {
       res.redirect('/registerPrestamo');
       return;
     }
-    if((ldiferenciaDias>7 && existeID[0].tipo_usuario === "alumno") ||(limitePres.length>14 && existeID[0].tipo_usuario === "profesor")){
+    if((diferenciaDias>7 && existeID[0].tipo_usuario === "alumno") ||(diferenciaDias>14 && existeID[0].tipo_usuario === "profesor")){
       req.flash('error', 'El lector excede el limite de fecha tope de devolución');
       res.redirect('/registerPrestamo');
       return;
