@@ -13,12 +13,16 @@ router.post('/page-modificacionEjemPrestamo', async (req, res) => {
     if(req.body.multa === "Si"){
       multa=true;
     }
-    const { idPrestamo, idInventario, cedula, fecha, fechaTope, fechaDevolucion} = req.body;
+    const { idPrestamo, idInventario, cedula, fechaDevolucion} = req.body;
 
     // Update the user information
     await pool.query(
-      'UPDATE prestamo SET idInventario = ?, cedula = ?, fecha = ?, fechaTope = ?, fechaDevolucion = ?, multa = ? WHERE idPrestamo = ?',
-      [idInventario, cedula, fecha, fechaTope, fechaDevolucion, multa, idPrestamo]
+      'UPDATE prestamo SET idInventario = ?, cedula = ?, fechaDevolucion = ?, multa = ? WHERE idPrestamo = ?',
+      [idInventario, cedula, fechaDevolucion, multa, idPrestamo]
+    );
+    await pool.query(
+      'UPDATE ejemplar SET estado = ? WHERE idInventario = ?',
+      ["Disponible", idInventario]
     );
 
     req.flash('success', 'Prestamo actualizado correctamente');
