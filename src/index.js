@@ -93,6 +93,7 @@ app.use(require('./routes/ejemplar'));
 app.use(require('./routes/prestamo'));
 app.use(require('./routes/tablainformacion'));
 app.use(require('./routes/ejemplaresLista'));
+app.use(require('./routes/ejemplaresListaPrestamo'));
 app.use(require('./routes/ejemplaresListaAlumno'));
 app.use(require('./routes/ejemplaresListaProfesor'));
 app.use(require('./routes/proceso'));
@@ -107,9 +108,10 @@ app.use(require('./routes/respuesta'));
 app.use(require('./routes/autentificacion'));
 app.use(require('./routes/unidad11'));
 app.use(require('./routes/eliminarEjemplar'));
-app.use(require('./routes/modificarEjemplar'))
-app.use(require('./routes/registerPrestamo'))
-app.use(require('./routes/registerMulta'))
+app.use(require('./routes/modificarEjemplar'));
+app.use(require('./routes/modificarEjemplarPrestamo'))
+app.use(require('./routes/registerPrestamo'));
+app.use(require('./routes/registerMulta'));
 
 //Public
 app.use(express.static(path.join(__dirname, 'public')));
