@@ -45,7 +45,7 @@ router.post('/registerPrestamo', async (req, res) => {
                 idInventario,
                 cedula,
                 fecha,
-                fechaTope,
+                fechaTope
               } = req.body;
               const prestamo = {
                 idInventario,
