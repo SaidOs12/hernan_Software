@@ -41,21 +41,17 @@ router.post('/registerPrestamo', async (req, res) => {
               res.redirect('/registerPrestamo');
               return;
             }else{
-              const fecDev = null;
               const {
-                idPrestamo,
                 idInventario,
                 cedula,
                 fecha,
                 fechaTope,
               } = req.body;
               const prestamo = {
-                idPrestamo,
                 idInventario,
                 cedula,
                 fecha,
-                fechaTope,
-                fecDev,
+                fechaTope
               }
               console.log("BIEN")
               await pool.query('INSERT INTO prestamo SET ?', [prestamo]);
