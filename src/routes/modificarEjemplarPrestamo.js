@@ -9,7 +9,7 @@ router.get('/page-modificacionEjemPrestamo', async (req, res) => {
 router.post('/page-modificacionEjemPrestamo', async (req, res) => {
   try {
     const multado=false;
-    if(req.body.multa === "Si"){
+    if(req.body.multa === "si"){
       multado=true
     }
     const { idPrestamo, idInventario, cedula, fechaDevolucion} = req.body;
