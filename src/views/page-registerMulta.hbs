@@ -55,34 +55,29 @@
                             <div class="tab-content" id="nav-tabContent">
                                 <div class="tab-pane fade show active" id="nav-personal" role="tabpanel"
                                     aria-labelledby="nav-personal-tab">
-                                    <form action="/registroMulta" method="POST" class="dz-form">
+                                    {{#each multa}}
+                                    <form action="/registerMulta" method="POST" class="dz-form">
                                         <div class="form-group mb-3">
-                                            <label for="idInventario">Id Inventario</label>
-                                            <input type="text" name="idInventario" class="form-control" required>
+                                            <label for="fecha">FechaPago</label>
+                                            <input type="date" name="fechaPago" class="form-control" required>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <label for="nombre">Cedula</label>
-                                            <input type="text" name="cedula" class="form-control" required>
+                                            <label for="importe">Importe</label>
+                                            <input type="text" name="importe" class="form-control" required>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <label for="fecha">Fecha</label>
-                                            <input type="date" name="fecha" class="form-control" required>
+                                            <label for="idPrestamo">ID Prestamo</label>
+                                            <input type="text" name="idPrestamo" class="form-control" value="{{idPrestamo}}" required>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <label for="fecha">FechaTope</label>
-                                            <input type="date" name="fecha" class="form-control" required>
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="multa">Multa?</label>
-                                            <select type="boolean" name="estado" class="form-control" required>
-                                                <option value="true">Si</option>
-                                                <option value="false">No</option>
-                                            </select>
+                                            <label for="cedula">cedula</label>
+                                            <input type="text" name="cedula" class="form-control" value="{{cedula}}" required>
                                         </div>
                                         <div class="text-center">
                                             <button class="btn btn-danger button-md btn-block" type="submit">Registrar</button>
                                         </div>
                                     </form>
+                                    {{/each]]}}
                                 </div>
                             </div>
                         </div>

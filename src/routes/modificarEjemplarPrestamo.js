@@ -9,7 +9,6 @@ router.get('/page-modificacionEjemPrestamo', async (req, res) => {
 router.post('/page-modificacionEjemPrestamo', async (req, res) => {
   try {
     
-    const multa =false;
     if(req.body.multa === "Si"){
       multa=true;
     }
@@ -24,9 +23,21 @@ router.post('/page-modificacionEjemPrestamo', async (req, res) => {
       'UPDATE ejemplar SET estado = ? WHERE idInventario = ?',
       ["Disponible", idInventario]
     );
-
+  
+    if(req.body.multa === "Si"){
+      const {
+        idPrestamo,
+        cedula
+      } = req.body;
+      const multa = {
+        idPrestamo,
+        cedula      
+      };
+      req.flash('success', 'Prestamo actualizado correctamente, registremos la multa');
+      res.redirect('/registerMulta',  { multa });
+    }else{
     req.flash('success', 'Prestamo actualizado correctamente');
-    res.redirect('/ejemplaresListasPrestamo');
+    res.redirect('/ejemplaresListasPrestamo');}
   } catch (error) {
     console.error(error);
     res.status(500).send("Error en la petición: " + error.message);
