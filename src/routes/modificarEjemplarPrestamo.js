@@ -39,7 +39,7 @@ await pool.query(
           };
           
           req.flash('success', 'Prestamo actualizado correctamente, registremos la multa');
-          res.redirect('/registerMulta', { multa });
+          res.redirect('/page-registerMulta', { multa });
       } else {
           req.flash('success', 'Prestamo actualizado correctamente');
           res.redirect('/ejemplaresListasPrestamo');
