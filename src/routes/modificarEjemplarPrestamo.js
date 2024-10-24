@@ -15,10 +15,7 @@ router.post('/page-modificacionEjemPrestamo', async (req, res) => {
     const { idPrestamo, idInventario, cedula, fechaDevolucion} = req.body;
 
     // Update the user information
-    await pool.query(
-      'UPDATE prestamo SET idInventario = ?, cedula = ?, fechaDevolucion = ?, multa = ? WHERE idPrestamo = ?',
-      [idInventario, cedula, fechaDevolucion, multa, idPrestamo]
-    );
+    
     await pool.query(
       'UPDATE ejemplar SET estado = ? WHERE idInventario = ?',
       ["Disponible", idInventario]
@@ -33,11 +30,22 @@ router.post('/page-modificacionEjemPrestamo', async (req, res) => {
         idPrestamo,
         cedula      
       };
+      const multado=true;
+      await pool.query(
+        'UPDATE prestamo SET idInventario = ?, cedula = ?, fechaDevolucion = ?, multa = ? WHERE idPrestamo = ?',
+        [idInventario, cedula, fechaDevolucion, multado, idPrestamo]
+      );
       req.flash('success', 'Prestamo actualizado correctamente, registremos la multa');
       res.redirect('/registerMulta',  { multa });
     }else{
+      const multado=false;
+      await pool.query(
+        'UPDATE prestamo SET idInventario = ?, cedula = ?, fechaDevolucion = ?, multa = ? WHERE idPrestamo = ?',
+        [idInventario, cedula, fechaDevolucion, multa, idPrestamo]
+      );
     req.flash('success', 'Prestamo actualizado correctamente');
-    res.redirect('/ejemplaresListasPrestamo');}
+    res.redirect('/ejemplaresListasPrestamo');
+  }
   } catch (error) {
     console.error(error);
     res.status(500).send("Error en la petición: " + error.message);
