@@ -2,10 +2,10 @@ module.exports = {
 
     database: {
 
-        host: 'mysql-said121.alwaysdata.net',
-        user: 'said121_tester',
-        password: 'host98M',
-        database: 'said121_db_fronteraautomatizada'
+        host: 'mysql-hernandito.alwaysdata.net',
+        user: '386475_admin',
+        password: 'hernanditoadmin12',
+        database: 'hernandito_administracion'
 
     }
 
